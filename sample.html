@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sensors '18</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+</head>
+<body>
+<img src="images/nittlogo.png" id="nittlogo">
+
+<div id="particles-js">
+		<div id="mySidenav" class="sidenav">
+  			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  			<a href="events.html"><span class="glyphicon glyphicon-tasks"></span> Events</a>
+  			<a href="workshops.html"><span class="glyphicon glyphicon-blackboard"></span> Workshops</a>
+  			<hr>
+  			<a href="register.html"><span class="glyphicon glyphicon-list-alt"></span> Register</a>
+  			<a href="contacts.html"><span class="glyphicon glyphicon-phone-alt"></span> Contact</a>
+  			<a href="about.html"><span class="glyphicon glyphicon-info-sign"></span> About</a>
+  			<a href="faqs.html"><span class="glyphicon glyphicon-bookmark"></span> FAQs</a>
+		</div>
+    
+		<span id="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+ 			<div class="footer_custom" id="footer"><center>&lt;/&gt; with </span><span style="color:red;">&hearts;</span> by <a href="contacts.html">Team Sensors'18</center></div>
+</div>
+<script src="particles.js"></script>
+<script src="js/app.js"></script>
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+</body>
+</html>

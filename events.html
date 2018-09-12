@@ -1,811 +1,750 @@
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <title>Sensors'18</title>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      <style type="text/css">
-               @font-face{
-         font-family:'Lato-Italic';
-         src: url('fonts/Lato-Italic.ttf');
-        }
-        @font-face{
-         font-family:'Lato-Regular';
-         src: url('fonts/Lato-Regular.ttf');
-        }
-        @font-face{
-         font-family:'Lato-Light';
-         src: url('fonts/Lato-Light.ttf');
-        }
-        @font-face{
-         font-family:'Lato-LightItalic';
-         src: url('fonts/Lato-LightItalic.ttf');
-        }
-        @font-face{
-         font-family:'Lato-Hairline';
-         src: url('fonts/Lato-Hairline.ttf');
-        }
-        body{
-          background-color: #cfd8dc;
-        }
-        .team_pic{
-          border-radius: 50%;
-          height: 170px;
-          width: 170px;
-          
-        }
-        .events_pic{   
-          border-radius: 5px;       
-          width: 100%;
-          height: auto;
-        }
-        .team_pic:hover{
-          box-shadow:
-        
-        0 0 50px #fff,            
-        -10px 0 80px #f0f,       
-        10px 0 80px #0ff;
-        }
-        a#sensors{
-          color:white !important;
-        }
-        .header{
-          margin-top: 0px;
-          width: 100%;
-          background-color: black !important;
-          color:white !important;
-          height:100px;
-          font-size: 30px;
-          padding-top: 10px;
-        }
-        .footer_custom {
-          position: relative;
-          
-          right: 0;
-          bottom: 0;
-          left: 0;
-          padding: 1rem;
-          font-size: 13px;
-          text-align: center;
-        }
-        .title{
-          text-align: center;
-          font-family: Lato-Light;
-          
-          color:white !important;
-        }
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sensors'18</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <style type="text/css">
+   @font-face{
+     font-family:'Lato-Italic';
+     src: url('fonts/Lato-Italic.ttf');
+ }
+ @font-face{
+     font-family:'Lato-Regular';
+     src: url('fonts/Lato-Regular.ttf');
+ }
+ @font-face{
+     font-family:'Lato-Light';
+     src: url('fonts/Lato-Light.ttf');
+ }
+ @font-face{
+     font-family:'Lato-LightItalic';
+     src: url('fonts/Lato-LightItalic.ttf');
+ }
+ @font-face{
+     font-family:'Lato-Hairline';
+     src: url('fonts/Lato-Hairline.ttf');
+ }
+ body{
+  background-color: black;
+  height: 100%;
+}
+.header{
+  margin-top: 0px;
+  width: 100%;
+  color:white !important;
+  font-size: 30px;
+  text-align: center;
+}
+#footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  font-size: 20px;
+  text-align: center;
+}
+.title{
+  text-align: center;
+  font-family: Lato-Light;
+  color:white !important;
+}
+.container{
+  margin-top: 40px;
+  font-family: Lato-Regular;
+}
+#menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  color: white;
+}
+.base_panel{
+  width:100%;
+  height:auto;
+  background-color:white;
+  border-radius:1px;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #444341;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    font-family: sans-serif;
+}
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+    font-family: sans-serif;
+}
+.sidenav a:hover {
+    color: #f1f1f1;
+    font-family: sans-serif;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+#image {
+  width:150px;
+  height:48px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+}
+.sidenav a {
+    font-size: 18px;}
+}
+@media screen and (max-width: 480px) {
+  .header{
+    font-size: 20px;
+    padding-top: 20px;
+}
+.card-title{
+    font-size: 17px !important;
+}  
+#image {
+  width:100px;
+  height:32px;
+}
+#footer {
+  font-size: 13px;
+}
+}
+/*.bg {
+    background-image: url("images/bg1.png");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
+</style>
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
 
-        .container{
-          margin-top: -30px;
-          font-family: Lato-Regular;
-        }
-        #ham{
-          float:left;
-          display: inline-block;
-          text-align: left !important;
-          padding-top: 15px;
-          padding-left: 10px;
-        }
-        .base_panel{
-          width:100%;
-          height:auto;
-          background-color:white;
-          border-radius:1px;
-        }
-        @media screen and (max-width: 480px) {
-          .header{
-            font-size: 20px;
-            padding-top: 20px;
-          }
-          .ham{
-            padding-left: 5px;
-          }
-          .card-title{
-            font-size: 17px !important;
-          }  
-        
-        }
-      </style>
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-
-    <body>
-  
-      
+<body class="bg">
     <div class="header">
-      <div id="ham">
-        <a href="#" data-activates="slide-out" class="button-collapse" style="color: white !important;"><i class="material-icons">menu</i></a>
-      </div>
       <div class="title">
-      <a href="index.html" id="sensors">Sensors '18  | </a>  E V E N T S
+          <a href="index.html"><img src="images/logofinal.png" id="image"></a> |  E V E N T S
       </div>
-    </div>
+  </div>
+  <span id="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="events.html"><span class="glyphicon glyphicon-tasks"></span> Events</a>
+    <a href="workshops.html"><span class="glyphicon glyphicon-blackboard"></span> Workshops</a>
+    <hr>
+    <a href="https://goo.gl/forms/W9orYsJJwC4bcmlb2"><span class="glyphicon glyphicon-list-alt"></span> Register</a>
+    <a href="contacts.html"><span class="glyphicon glyphicon-phone-alt"></span> Contact</a>
+    <a href="about.html"><span class="glyphicon glyphicon-info-sign"></span> About</a>
+    <a href="faqs.html"><span class="glyphicon glyphicon-bookmark"></span> FAQs</a>
+    <hr>
+    <a href="https://www.facebook.com/sensorsNITTrichy"><span class="glyphicon glyphicon-thumbs-up"></span> Connect to us</a>
+    <hr>
+    <a href="#"><span class="glyphicon glyphicon-calendar"></span> Be here on 6th & 7th October</a>
+</div>
 
-      <ul id="slide-out" class="side-nav" style="z-index: 99999;color: #523 !important;font-family:Lato-Regular;">
-       <li style="height: 81px;cursor: pointer;" onclick="window.location.href='index.html'" ><div class="userView">
-      <div class="background" style="height: 81px;">
-        <center><img src="images/temp1.jpg" style="width: 300px;"></center>
-      </div>
-         </div></li>
-           <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-          <li>
-            <a href="events.html" class="collapsible-header">Events<i class="material-icons">whatshot</i></a>
-            
-          </li>
-        </ul>
-        <ul class="collapsible collapsible-accordion">
-          <li>
-            <a href="workshops.html" class="collapsible-header">Workshops<i class="material-icons">event_available</i></a>
-           
-          </li>
-        </ul>
-      </li>
-      <li><a href="exhibitions.html" class="collapsible-header">Exhibitions<i class="material-icons">fiber_new</i></a></li>
-      <li><div class="divider" class="collapsible-header"></div></li>
-      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScfAwjZYYTl2poqtfTjJVRFH3Vs2Q6Da_MdXy0sFmOOXmnw3w/viewform" class="collapsible-header" target="_blank">Register<i class="material-icons">playlist_add_check</i></a></li>
-      <li><a href="contacts.html" class="collapsible-header">Contacts<i class="material-icons">group</i></a></li>
-      <li><a href="about.html" class="collapsible-header">About<i class="material-icons">feedback</i></a></li>
-      <li><a href="faqs.html" class="collapsible-header">FAQs<i class="material-icons">lightbulb_outline</i></a></li>
-     <!-- <li><a href="schedule.pdf" download class="collapsible-header">Schedule<i class="material-icons">schedule</i></a></li>
-      -->
- 
-      <li><a href="https://www.facebook.com/sensorsNITTrichy" target="_blank" class="collapsible-header">Connect to Facebook<i class="material-icons">thumb_up</i></a></li>
-       <li><div class="divider"></div></li>
-      <li style="font-family:Lato-Italic;"><a href="#!" class="collapsible-header">Join Us this January 29<sup>th</sup> &amp; 30<sup>th</sup><i class="material-icons">sentiment_very_satisfied</i></a></li>
-      <li><div class="divider"></div></li>
-      
-      </ul>
-  <div class="container"> 
+<div class="container"> 
     <div class="base_panel">
       <div class="card-panel grey lighten-3">
 
           <div class="row">
-                    
-                     <div class="col s12 m6 l6">
-                        <div class="card blue-grey lighten-4">
-                          <div class="card-image">
-                                <img src="images/events_icons/kk2.png" class="events_pic">                               
-                              </div>
-                              <div class="card-content black-text"  style="font-family:Lato-Light">
-                                <span class="card-title"style="text-align:center;">T R A I L &nbsp; B Y &nbsp; T R O N I X</span>
-                               Ever dreamt of being bombarded by a stream of resistors, diodes, capacitors
-                              and inductors?<p> If yes, then its your time. Portray your talents and show us what
-                              these elements are capable of.<p> Fantasy is what grabs your attention?
-                              Are you good at deciphering hints to build a circuit? Yes? <p>Then this is designed and soldered for you! Grab the chance.
-                              </div>
-                              <div class="card-action" style="text-align:center;">
-                                <a onclick="$('#modal1').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
-                                
-                              </div>
-                        </div>
-                      </div>
+
+             <div class="col s12 m6 l6">
+                <div class="card blue-grey lighten-4">
+                  <div class="card-image">
+                    <img src="images/events_icons/kk2.png" class="events_pic">                               
+                </div>
+                <div class="card-content black-text"  style="font-family:Lato-Light">
+                    <span class="card-title"style="text-align:center;">T R A I L &nbsp; B Y &nbsp; T R O N I X</span>
+                    Ever dreamt of being bombarded by a stream of resistors, diodes, capacitors
+                    and inductors?<p> If yes, then its your time. Portray your talents and show us what
+                    these elements are capable of.<p> Fantasy is what grabs your attention?
+                    Are you good at deciphering hints to build a circuit? Yes? <p>Then this is designed and soldered for you! Grab the chance.
+                </div>
+                <div class="card-action" style="text-align:center;">
+                    <a onclick="$('#modal1').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
+
+                </div>
+            </div>
+        </div>
 
 
 
-                      <div class="col s12 m6 l6">
-                        <div class="card blue-grey lighten-4">
-                          <div class="card-image">
-                                <img src="images/events_icons/coding.gif" class="events_pic">
-                                
-                              </div>
-                              <div class="card-content black-text"  style="font-family:Lato-Light">
-                                <span class="card-title"style="text-align:center;">C O D E &nbsp; Q U E S T</span>
-                                Do you enjoy deciphering codes? Do you love to give your fingers an exercise on keyboard? 
-                                Well, who doesn’t.<p> Come on and join us for this exciting event of Code Quest and find your treasure. <p> Program your brain cells and get ready to be the “Coder”.
-                                <p>if (You’re a coder)
-                                goto Sensors;<br>
-                                else<br>
-                                printf("Well, there’s no better place to start learning!");<br>
-                              </div>
-                              <div class="card-action" style="text-align:center;">
-                                <a onclick="$('#modal2').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
-                              </div>
-                        </div>
-                    </div>
+        <div class="col s12 m6 l6">
+            <div class="card blue-grey lighten-4">
+              <div class="card-image">
+                <img src="images/events_icons/coding.gif" class="events_pic">
 
             </div>
-
-
-          <div class="row">
-                    
-                     <div class="col s12 m6 l6">
-                        <div class="card blue-grey lighten-4">
-                          <div class="card-image">
-                                <img src="images/events_icons/algo.png" class="events_pic">                               
-                              </div>
-                              <div class="card-content black-text"  style="font-family:Lato-Light">
-                                <span class="card-title"style="text-align:center;">A L G O &nbsp; W A R R I O R S</span>
-                               In today's fast moving world, no one want their activities to be delayed. this demand of ours has led us to the era of Algorithms. An Algo is a methodical set of steps that can be used to make calculations, resolve problems and reach decisions.<p>
-                              "An algorithm isn't a particular calculation, but the method followed when making the calculation"
-                              <p>If you find all this interesting , come and test your wisdom and compete with others!
-
-                              </div>
-                              <div class="card-action" style="text-align:center;">
-                                <a onclick="$('#modal3').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
-                                
-                              </div>
-                        </div>
-                      </div>
-
-
-
-                      <div class="col s12 m6 l6">
-                        <div class="card blue-grey lighten-4">
-                          <div class="card-image">
-                                <img src="images/events_icons/build.gif" class="events_pic">
-                                
-                              </div>
-                              <div class="card-content black-text"  style="font-family:Lato-Light">
-                                <span class="card-title"style="text-align:center;">I D E A T E&nbsp; &AMP; &nbsp; B U I L D</span>
-                               
-                              With big thing starting from a single thought, your ideas can bring a change in
-                              this world. <p>This event is aimed to ignite ideas and foster creativity in young
-                              minds.<p> Each idea has the potential to bring a change in this world.<p>
-                              So, start Ideating, try to structure your thoughts, bring them to life and win
-                              exciting prizes.
-                               <p>&nbsp;<p>&nbsp;
-
-                              </div>
-                              <div class="card-action" style="text-align:center;">
-                                <a onclick="$('#modal4').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
-                              </div>
-                        </div>
-                    </div>
-
+            <div class="card-content black-text"  style="font-family:Lato-Light">
+                <span class="card-title"style="text-align:center;">C O D E &nbsp; Q U E S T</span>
+                Do you enjoy deciphering codes? Do you love to give your fingers an exercise on keyboard? 
+                Well, who doesn’t.<p> Come on and join us for this exciting event of Code Quest and find your treasure. <p> Program your brain cells and get ready to be the “Coder”.
+                <p>if (You’re a coder)
+                    goto Sensors;<br>
+                    else<br>
+                    printf("Well, there’s no better place to start learning!");<br>
+                </div>
+                <div class="card-action" style="text-align:center;">
+                    <a onclick="$('#modal2').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
+                </div>
             </div>
+        </div>
 
-          <div class="row">
-                    
-                     <div class="col s12 m6 l6">
-                        <div class="card blue-grey lighten-4">
-                          <div class="card-image">
-                                <img src="images/events_icons/algebra.jpg" class="events_pic">                               
-                              </div>
-                              <div class="card-content black-text"  style="font-family:Lato-Light">
-                                <span class="card-title"style="text-align:center;">L t&nbsp; D O E S N ' T &nbsp; E X I S T</span> You have to be 'ODD' to be number 'ONE'!<p>
-                                  Ever tried to unlock that door of Math which is filled with fun,exciting and engaging rounds of quizzes and puzzles?<p> If not, then brace yourself and get ready to play with numbers in a unique way!!
-                                    <p>&nbsp;<p>&nbsp;<p>&nbsp;
-                              </div>
-                              <div class="card-action" style="text-align:center;">
-                                <a onclick="$('#modal5').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
-                                
-                              </div>
-                        </div>
-                      </div>
-
-
-
-                      <div class="col s12 m6 l6">
-                        <div class="card blue-grey lighten-4">
-                          <div class="card-image">
-                                <img src="images/events_icons/cameras.gif" class="events_pic">
-                                
-                              </div>
-                              <div class="card-content black-text"  style="font-family:Lato-Light">
-                                <span class="card-title"style="text-align:center;">T E C H &nbsp; C L I C K</span>
-                                Taking an Image, freezing a moment reveals how rich reality truly is!<p>
-                                You need not be a professional photographer to capture that reality. Creativity is all about giving yourself permission to see things differently.<p>
-                                For all those photographers with a passion to reason, TechClick is the perfect platform for you to unleash your talent.
-
-                              </div>
-                              <div class="card-action" style="text-align:center;">
-                                <a onclick="$('#modal6').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
-                              </div>
-                        </div>
-                    </div>
-
-            </div>
-
-
-            <div class="row">
-                    
-                     <div class="col s12 m6 l6">
-                        <div class="card blue-grey lighten-4">
-                          <div class="card-image">
-                                <img src="images/events_icons/robot.png" class="events_pic">                               
-                              </div>
-                              <div class="card-content black-text"  style="font-family:Lato-Light">
-                                <span class="card-title"style="text-align:center;">R O B O &nbsp; R A C E</span> This is the grand prix of all Robot
-                                races. Make sure your bot has the same grit and brawn as you to handle the heat of
-                                our tracks here.<p>
-                                Build a manually controlled robot which is capable of racing on a rough
-                                circuit and completing the track specified in the shortest period of time. 
-                                   
-                              </div>
-                              <div class="card-action" style="text-align:center;">
-                                <a onclick="$('#modal7').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
-                                
-                              </div>
-                        </div>
-                      </div>
-
-
-
-                      <div class="col s12 m6 l6">
-                        <div class="card blue-grey lighten-4">
-                          <div class="card-image">
-                                <img src="images/events_icons/brain.jpg" class="events_pic">                               
-                              </div>
-                              <div class="card-content black-text"  style="font-family:Lato-Light">
-                                <span class="card-title"style="text-align:center;">S E N S O R S &nbsp; Q U I Z</span>
-                               It's at this time that the tidbits of trivia you accumulated over time come in handy.<p> Participate in this general themed quiz, work out questions and rack your head until the answer finally strikes you! 
-                                 <p>&nbsp;<p>&nbsp;
-                              </div>
-                              <div class="card-action" style="text-align:center;">
-                                <a onclick="$('#modal8').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
-                                
-                              </div>
-                        </div>
-                      </div>
-
-            </div>
-
-
-
-          <div class="row">
-                    
-                     <div class="col s12 m6 l6 offset-m3 offset-l3">
-                        <div class="card blue-grey lighten-4">
-                          <div class="card-image">
-                                <img src="images/events_icons/treasurehunt.png" class="events_pic">                               
-                              </div>
-                              <div class="card-content black-text"  style="font-family:Lato-Light">
-                                <span class="card-title"style="text-align:center;">T E C H N I C A L <br> T R E A S U R E &nbsp; H U N T</span>
-                               This event offers you
-                                that learning experience through fast paced, fun packed challenges with a little
-                                ‘technical’ touch.<p>
-                                The hunt challenges your ability to decipher the scientific hints to spot a place and
-                                reach the treasure.<p>
-                                So buckle up guys, take part in this hunt to appreciate some of these things that
-                                are hidden in plain sight with your knowledge!<p>
-                                <i>Note: This event is open only for NIT Trichy students.</i>
-
-                              </div>
-                              <div class="card-action" style="text-align:center;">
-                                <a onclick="$('#modal9').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
-                                
-                              </div>
-                        </div>
-                      </div>
-
-
-            </div>
-
-
-
-      </div>
     </div>
-  </div>
-   <div id="modal1" class="modal modal-fixed-footer">
-                      <div class="modal-content">
-                         <span class="card-title"style="text-align:center;">T R A I L &nbsp; B Y &nbsp; T R O N I X</span>
-                         <div class="divider"></div>
-                               <p>
-                                <b>FORMAT</b> 
 
-                                <p>ROUND 1 <br>
 
-                                1)It is an objective round. A paper and pen round.
-                                A team can have a maximum of two participants. 
-                                <br>
-                                2)Questions will be based on basic electronics, instrumentation and circuit theory. 
-                                <br>
-                                3)After evaluation top 10 teams will be moving on to the next round. 
-                                <p>
-                                ROUND 2<br> 
-                                1) It is a hands on design round. 
-                                <br>
-                                2) A story is given where every character in story are described with respect to electrical components characteristics.
-                                <br>
-                                3) And the participants need to identify the electrical components and connect them according to the particular sequence as mentioned, on the breadboard.
-                                <br>
-                                4) Correct output will not be obtained if the component is not interpreted exactly.
-                                <br>
-                                5) Correct output will not be obtained if the components are not connected in the sequence as mentioned in the story.
-                                <br>
-                                6) According to the time taken to obtain the output and other points  mentioned beow winners will be declared.
-                                <p>
-                                Example:
-                                <p>
-                                Each character represents an electrical element. The behavior of the person corresponds to the element's characteristics.Using these as clues identify what each character is in electrical analogy.<br>
-                                Character A: Doesn't think of the past. He thinks only of the future.<br>
-                                Character B: Adopts and responds immediately to all situations.<br>
-                                Character C: Doesn't like changes in life.<br>
-                                Relate these clues to the elements' behavior and identify these characters. Then, connect these elements so that there is no current division between them on the given bread board. Now, identify across which element the LED will glow.<br>
-                                This example is for a basic idea.
+    <div class="row">
 
-                                <p><b>RULES</b></p>
-                                1) Mobiles and internet usage is strictly prohibited.<br>
-                                2) No need to bring components. You will be provided with the components.<br>
-                                3) Event managers decision is final. No further arguments are entertained.<p>
+     <div class="col s12 m6 l6">
+        <div class="card blue-grey lighten-4">
+          <div class="card-image">
+            <img src="images/events_icons/algo.png" class="events_pic">                               
+        </div>
+        <div class="card-content black-text"  style="font-family:Lato-Light">
+            <span class="card-title"style="text-align:center;">A L G O &nbsp; W A R R I O R S</span>
+            In today's fast moving world, no one want their activities to be delayed. this demand of ours has led us to the era of Algorithms. An Algo is a methodical set of steps that can be used to make calculations, resolve problems and reach decisions.<p>
+            "An algorithm isn't a particular calculation, but the method followed when making the calculation"
+            <p>If you find all this interesting , come and test your wisdom and compete with others!
+
+            </div>
+            <div class="card-action" style="text-align:center;">
+                <a onclick="$('#modal3').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
+
+            </div>
+        </div>
+    </div>
 
 
 
-                               <b> JUDGING CRITERIA</b></p>
-                                1. Time taken to obtain the output.
-                                <br> 2. The way team interprets the components from the story description given.
+    <div class="col s12 m6 l6">
+        <div class="card blue-grey lighten-4">
+          <div class="card-image">
+            <img src="images/events_icons/build.gif" class="events_pic">
 
-                                <p><b>CONTACTS</b><br>
-                                Vaneesha : +919952214684<br>
-                                Rohith : +919790036653
-                      </div>
-                      <div class="divider"></div>
-                      <div class="modal-footer">
-                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
-                      </div>
-                    </div>
-  <div id="modal2" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                   <span class="card-title"style="text-align:center;">C O D E &nbsp; Q U E S T</span>
-                   <div class="divider"></div>
-                         <p>
-                         <b>FORMAT</b></p>
-                         Round 1:<br>
-                         It will be a pen and paper test consisting of basic C and algorithms based questions. 
-                         <br>The best 15 top scoring teams will be selected. 
-                         <p>
-                          Round 2:
-                          <br>In this round, you should write the code for given questions and execute 
-                          your code on the computers provided . <br>
-                          You can code in the programming language of your choice
-                          
-                          <p><b>JUDGING CRITERIA</b></p>
-                          1. In Final Round, top 3 teams will be selected as winners based on their scores and the efficiency and optimization of the code cracked.  
-                          <br>
-                          2. The decision of the organizers in declaring the results will be final. No queries in this regard will be entertained.  
-                          <br> 
-                          3. In case of any ties, more efficient solutions will be given preference.  
-                          <br> 
-                          4. Any participant found to be indulging in any form of malpractice will be immediately disqualified.
-                          <p><b>RULES</b></p>
-                          -> Each team can have maximum of two members. One person is also allowed.  
-                          <br>
-                          -> Knowledge of C, C++ and Data Structure is required  
-                          <br> 
-                          -> DiscussIon of strategy Or giving suggestions or tips during the event will not be encouraged.
-                          <br> 
-                          -> The timing must be strictly adhered to.  
-                          <p><b>FAQs</b></p>
-                          Q1. Do I have to bring my laptop?  <br>
-                          A1. No need of laptop. You will be provided with systems to work on.
-                          <p>
-                          Q2. What kind of questions will be asked in first round?       <br> 
-                          A2. Basic debugging and output type questions.  
-                          <p>
-                          Q3. I don’t have a partner, can I participate?  <br>
-                          A3. Yes you can, a team can have a maximum of 2 persons and a minimum of 1 person. 
-                          <p>
-                <b>CONTACTS</b><br>
-                Vaneesha : 9952214684<br>
-                Amitesh : 91 7071322273 
-                </div>
-                <div class="divider"></div>
-                <div class="modal-footer">
-                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
-                </div>
-  </div>
-  <div id="modal3" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                   <span class="card-title"style="text-align:center;">A L G O &nbsp; W A R R I O R S</span>
-                   <div class="divider"></div>
-                         <p>
-                         Algo Warriors is an event which will test the aptitude of the participant, participant’s attention to details and their speed of coming up with efficient solutions using computer science algorithms. <p>
-                         <p><b>RULES</b></p>
-                        1. All participating individuals will compete.<br>
-                        2. Carry a pen and college identity card.<br>
-                        3. The decision of judges and event managers is final.<br>
-                        4. Allowed Programming Languages: C, C++, Java, Python<br>
-                        5. Mobile and internet usage is strictly prohibited.  
-                        <p><b>JUDGING CRITERIA</b></p>
-                        1. Finding How Much Efficient Given Modified Algorithm from Standard Algorithm
-                        <br>2. Finding Time Complexity of Modified Algorithm
-                        <br>3. Finding Space Complexity of Modified Algorithm
-                        <p><b> EXAMPLE </b></p>
-                        Given a sorted array arr[] of n elements, write a function to search a given element x in arr[].
-                        <p>A simple approach is to do Linear Search. The time complexity of above algorithm is O(n). Another approach to perform the same task is using Binary Search.<p>
-                        Binary Search: Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found, or the interval is empty.<p>
-                        The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O (logn).<p>
-                        The example given here is a very basic model. But the problem that will be given will be more complex than this. 
-                        <p><b>FAQs</b></p>
-                        Q: Do I need to have any prerequisite knowledge?
-                        <br>A: Basic skills to resolve technical problems is sufficient.
-                        <p>Q: How to register for the event?
-                        <br>A: Online registration through the link in fb page (sensors).
-                        <p>Q: Is there any payment for participation in the event?
-                        <br>A: No, it is absolutely free. Participate, ace the round and go back with lots of goodies!
-                        <p><b>CONTACTS</b><br>
-                Swaroopa : 9994300112<br>                                                                                Surekha : 9790483356
-                </div>
-                <div class="divider"></div>
-                <div class="modal-footer">
-                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
-                </div>
-  </div>
-  <div id="modal4" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                   <span class="card-title"style="text-align:center;">I D E A T E &nbsp; &AMP; &nbsp; B U I L D</span>
-                   <div class="divider"></div>
-                         <p>
-                         <b>FORMAT</b><p>
-                        Round 1:<br>
-                       
-                        -> Online prelims from January 6 to January 18.
-                        <br>-> Participant must submit an abstract with a brief description of their idea
-                        along with the details of the team members, college and email id.
-                        <br>-> The abstract can be on any viable topic under Circuital (IOT,Signal
-                        Processing , Embedded Systems etc.), Robotics, Automation, Artificial
-                        intelligence with objective, impact, innovativeness and available
-                        technology.
-                        <br>-> Entries must be sent to <b>sensors.nitt.org@gmail.com</b>
-                        <p>
-                        Round 2:
-                        
-                        <br>-> Shortlisted participants are expected to work on their idea and execute
-                        it.
-                        <br>-> Submitting a working prototype is encouraged, but participants can also
-                        submit a design or simulation of the same.
-                        <br>-> Participant must be able to give a presentation if asked.
-                        <br>-> Judge’s decision is final
-                        <br>-> The round 2 takes place during the SENSORS event on January 30.
-                        
-                        <p><b>JUDGING CRITERIA</b>
-                        <br>-> Creativity/Innovation in the idea.
-                        <br>->  Originality
-                        <br>->  Extent of development of the Idea.
-                        <br>->  Potential for Impact.
-                        <br>->  Scalability.
-                        <br>->  Economic feasibility.
-                        <br>->  Quality of presentation.
-                        
-                        <p><b>RULES</b>
-                        <br>->  Maximum of 5 members per team.
-                        <br>->  The abstract must contain less than 250 words.
-                        <br>->  The abstract must briefly explain the different aspects mentioned above.
-                        <br>->  Any form of plagiarism is not encouraged and will lead to elimination.
-                        <br>->  If the technology is already present, give a description of the additional
-                        functionalities introduced along with the available technology.
-                        <br>->  All the entries must be submitted before the stipulated deadline.
-                        
-                        <p><b>PRIZES</b>
-                        <br>Winning team: Rs 3500
-                        <br>1 st Runner up : Rs 2500
-                        <br>2 nd Runner up: Rs 1000
-                        
-                        <b><p>CONTACTS</b><br>
-                        Email us at: sensors.nitt.org@gmail.com
-                        <br>Rajesh : 9003418254
-                        <br>Vaneesha : 9952214684
-                </div>
-                <div class="divider"></div>
-                <div class="modal-footer">
-                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
-                </div>
-  </div>
-  <div id="modal5" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                   <span class="card-title"style="text-align:center;">L t &nbsp; D O E S N ' T &nbsp; E X I S T</span>
-                   <div class="divider"></div>
-                         <p>
-                        <b>FORMAT</b></p>
-                        This is a team event and there will be two rounds.
-                        <p>ROUND 1:
-                        <br>-> Every team should have a maximum of 3 members and minimum of 2.
-                        <br>-> The first round is basically a math quiz.
-                        <br>-> Fixed number of questions will be given and participants are encouraged to answer the maximum.
-                        <br>-> Based on the scores 6-8 teams will be shortlisted to the second round.
-                        <p>ROUND 2:
-                        <br>-> This round is more like dumb charades.
-                        <br>-> Objects that can be mathematically described are given to one of the team members, he/she should use mathematical terms (the person is allowed to talk) and describe the object given to his team mates. And the team mates should guess the object correctly.
-                        <br>-> For every team a total time of 90sec will be given . The one who explains is allowed to pick up any no. Of chart papers with object names.( Only after explanation of the taken one ).
-                        <p> EXAMPLE:
-                        <br> For example if mobile is given, the participant will use length and breadth for describing a rectangle. And then he can expand the dimension and end up with cuboid. So this is how one should describe the object and end up with the answer.
-                        
-                        <p><b>RULES</b>
-                        <br>-> Mobiles and internet usage is strictly prohibited.
-                        <br>-> Event managers decision is final. No further arguments are entertained.
-                        <br>-> Space for rough work will be provided along with question paper. There is no necessity to bring rough papers.
-                        <p><b>JUDGING CRITERIA</b>
-                        <br>-> 6-8 teams with top score will play in second round.
-                        <br>-> The team which identifies the maximum number of objects will be declared as the winning team.
-                        <br>-> If the objects identified by two or more teams are same then the team which took minimum time will be awarded the first place. 
-                        <br>-> Event managers decision is final.
-                        
-                        <p><b>FAQs</b>
-                        <p>1. How many members can be in a team?
-                        <br>Maximum of 3 members and a minimum of 2 is must.
+        </div>
+        <div class="card-content black-text"  style="font-family:Lato-Light">
+            <span class="card-title"style="text-align:center;">I D E A T E&nbsp; &AMP; &nbsp; B U I L D</span>
 
-                        <p>2. What type of questions are asked in the first round?
-                        <br>Basic mathematics from all areas like algebra, trigonometry, probability, geometry, calculus will be asked.
+            With big thing starting from a single thought, your ideas can bring a change in
+            this world. <p>This event is aimed to ignite ideas and foster creativity in young
+            minds.<p> Each idea has the potential to bring a change in this world.<p>
+            So, start Ideating, try to structure your thoughts, bring them to life and win
+            exciting prizes.
+            <p>&nbsp;<p>&nbsp;
 
-                        <p>3. Is participant allowed to talk in the second round while acting?
-                        <br>Yes. But he/she can only describe the objects using mathematical terms. If one uses non-mathematical words, that object will not be counted.
+            </div>
+            <div class="card-action" style="text-align:center;">
+                <a onclick="$('#modal4').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
+            </div>
+        </div>
+    </div>
 
-                        <p><b>CONTACTS</b><br>
+</div>
 
-                        Swaroopa : 9994300112<br>
-                        Nikhil : 9491461061
+<div class="row">
 
-                </div>
-                <div class="divider"></div>
-                <div class="modal-footer">
-                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
-                </div>
-  </div>
-  <div id="modal6" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                   <span class="card-title"style="text-align:center;">T E C H &nbsp; C L I C K</span>
-                   <div class="divider"></div>
-                <p><b>RULES</b><p>
-                1. The participants are required to capture any of the day to day processes and provide a description for the captured image in terms of the technical phenomenon they are aware of.
-                 <p> 2. The participants can use one or more photographs of the same subject shot in different angles to illustrate the phenomena better.<p>
-                3. You are free to use any camera(Professional/mobile) to click pictures.<p>
-                4. All the pictures must have accurate captions and technical description ,written in English only.<p>
-                5. Using Photoshop to bring in any superficial effects is strictly not allowed.<p>
-                6. Entries should send the following info along with the picture:
-                <ul>
-                  <li>-> Name</li>
-                  <li>-> College Name and Location</li>
-                  <li>-> Contact Number</li>
-                  <li>-> Email</li>
-                  <li>-> Detailed description of the subject matter</li>
-                </ul>
-                7. The last date for submitting the entries is 5th January 2018<p>
-                8. Submissions will not be accepted once the deadline lapses.<p>
-                <b>
-                Submit your entries to:
-                sensors.nitt.org@gmail.com
-                </b>
+ <div class="col s12 m6 l6">
+    <div class="card blue-grey lighten-4">
+      <div class="card-image">
+        <img src="images/events_icons/algebra.jpg" class="events_pic">                               
+    </div>
+    <div class="card-content black-text"  style="font-family:Lato-Light">
+        <span class="card-title"style="text-align:center;">L t&nbsp; D O E S N ' T &nbsp; E X I S T</span> You have to be 'ODD' to be number 'ONE'!<p>
+        Ever tried to unlock that door of Math which is filled with fun,exciting and engaging rounds of quizzes and puzzles?<p> If not, then brace yourself and get ready to play with numbers in a unique way!!
+        <p>&nbsp;<p>&nbsp;<p>&nbsp;
+        </div>
+        <div class="card-action" style="text-align:center;">
+            <a onclick="$('#modal5').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="col s12 m6 l6">
+    <div class="card blue-grey lighten-4">
+      <div class="card-image">
+        <img src="images/events_icons/cameras.gif" class="events_pic">
+
+    </div>
+    <div class="card-content black-text"  style="font-family:Lato-Light">
+        <span class="card-title"style="text-align:center;">T E C H &nbsp; C L I C K</span>
+        Taking an Image, freezing a moment reveals how rich reality truly is!<p>
+        You need not be a professional photographer to capture that reality. Creativity is all about giving yourself permission to see things differently.<p>
+        For all those photographers with a passion to reason, TechClick is the perfect platform for you to unleash your talent.
+
+    </div>
+    <div class="card-action" style="text-align:center;">
+        <a onclick="$('#modal6').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
+    </div>
+</div>
+</div>
+
+</div>
+
+
+<div class="row">
+
+ <div class="col s12 m6 l6">
+    <div class="card blue-grey lighten-4">
+      <div class="card-image">
+        <img src="images/events_icons/robot.png" class="events_pic">                               
+    </div>
+    <div class="card-content black-text"  style="font-family:Lato-Light">
+        <span class="card-title"style="text-align:center;">R O B O &nbsp; R A C E</span> This is the grand prix of all Robot
+        races. Make sure your bot has the same grit and brawn as you to handle the heat of
+        our tracks here.<p>
+        Build a manually controlled robot which is capable of racing on a rough
+        circuit and completing the track specified in the shortest period of time. 
+
+    </div>
+    <div class="card-action" style="text-align:center;">
+        <a onclick="$('#modal7').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
+
+    </div>
+</div>
+</div>
+
+
+
+<div class="col s12 m6 l6">
+    <div class="card blue-grey lighten-4">
+      <div class="card-image">
+        <img src="images/events_icons/brain.jpg" class="events_pic">                               
+    </div>
+    <div class="card-content black-text"  style="font-family:Lato-Light">
+        <span class="card-title"style="text-align:center;">S E N S O R S &nbsp; Q U I Z</span>
+        It's at this time that the tidbits of trivia you accumulated over time come in handy.<p> Participate in this general themed quiz, work out questions and rack your head until the answer finally strikes you! 
+        <p>&nbsp;<p>&nbsp;
+        </div>
+        <div class="card-action" style="text-align:center;">
+            <a onclick="$('#modal8').modal('open');" href="#">RULES &AMP; REGISTRATION</a>
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+</div>
+</div>
+</div>
+
+<div id="modal1" class="modal modal-fixed-footer">
+  <div class="modal-content">
+     <span class="card-title"style="text-align:center;">T R A I L &nbsp; B Y &nbsp; T R O N I X</span>
+     <div class="divider"></div>
+     <p>
+        <b>FORMAT</b> 
+
+        <p>ROUND 1 <br>
+
+            1)It is an objective round. A paper and pen round.
+            A team can have a maximum of two participants. 
+            <br>
+            2)Questions will be based on basic electronics, instrumentation and circuit theory. 
+            <br>
+            3)After evaluation top 10 teams will be moving on to the next round. 
+            <p>
+                ROUND 2<br> 
+                1) It is a hands on design round. 
+                <br>
+                2) A story is given where every character in story are described with respect to electrical components characteristics.
+                <br>
+                3) And the participants need to identify the electrical components and connect them according to the particular sequence as mentioned, on the breadboard.
+                <br>
+                4) Correct output will not be obtained if the component is not interpreted exactly.
+                <br>
+                5) Correct output will not be obtained if the components are not connected in the sequence as mentioned in the story.
+                <br>
+                6) According to the time taken to obtain the output and other points  mentioned beow winners will be declared.
                 <p>
-                <b>CONTACTS</b><p>
-                Vaneesha:  9952214684<br>
-                Lalitha Rani: 9490848336
-                <p>
-                <b>JUDGING CRITERIA</b>
-                <ul>
-                  <li>-> Originality of the photo</li>
-                  <li>-> Concept and Technicality</li>
-                  <li>-> Caption and Description</li>
-                </ul>  
-                </div>
-                <div class="divider"></div>
-                <div class="modal-footer">
-                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
-                </div>
-  </div>
-  <div id="modal7" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                   <span class="card-title"style="text-align:center;">R O B O &nbsp; R A C E</span>
-                   <div class="divider"></div>
-                         <p>
-                          <b>DESCRIPTION:</b><p>
-                          You think it is as easy as it sounds? Think again. This is the grand prix of all Robot races. Make sure your bot has the same grit and brawn as you to handle the heat of our tracks here. 
-                          Build a manually controlled robot which is capable of racing on a rough circuit along with its fellow bots.<br>
-                          In the shortest period of time, it must be able to complete the track specified.
-                          <p><b>EVENT RULES:</b></p>
-                          The game play consists of a single round.<br>
-                          The participating teams will drive their robot individually in the track.<br>
-                          The track may contain stable obstacles of small,medium and large sizes. The bot hitting the large obstacle will be given a penalty of +3 sec, hitting the medium size obstacle will get a penalty of +4 sec and the bot hitting the smaller obstacles will be given a penalty of +5 sec.
-                          Each time the bot touches either one of the boundary, there will be a penalty of +2 seconds.
-                          The time taken to complete the circuit will be taken as your qualifying time.<br>
-                          The 3 teams that finish the race quickly will be declared as winners.<br>
-                          In case of any tie ,another race will be conducted and the winner will be declared.
-                          <p><b>GENERAL RULES:</b></p>
-                          Team can have a maximum number of 4 members.<br>
-                          No person shall be a member of 2 teams.<br>
-                          A team is allowed to play with only one robot.<br>
-                          In case the robot moves out off the arena, the robot will be placed at the previous checkpoint.<br>
-                          Touching the robot during the game will lead to negative points.<br>
-                          Unfair game may lead to disqualification of the team.<br>
-                          The robot should not damage the field. Damaging/harming the arena may lead to disqualification.
-                          Decision of the Event Organizers shall be treated as final.<br>
-                          <p><b>BOT SPECIFICATIONS:</b></p>
-                          The ROBOT can have a maximum dimension of 300 x 300 x 200(l x b x h) (all in mm).<br> 
-                          The maximum potential difference between any two points should be 12 volts DC.<br>
-                          Robot must have power supply on board. There will be no provision of external power supply.
-                          The bot should be controlled by a joy stick.<br>
-                          It should be controlled by a single person at a time.<br>
-                          <p><b>FIELD SPECIFICATIONS:</b></p>
-                          <img src="images/events_icons/roborace.png">
-                          <p><b>JUDGING CRITERIA:</b></p>
-                          Judging is based on Time taken to complete the track.
-                          <p>
-                          <b>CONTACT DETAILS:</b></p>
-                          Swaroopa - 9994300112<br>
-                          Srinivas – 9494407083.
-                </div>
-                <div class="divider"></div>
-                <div class="modal-footer">
-                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
-                </div>
-  </div>
-  <div id="modal8" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                   <span class="card-title"style="text-align:center;">S E N S O R S &nbsp; Q U I Z</span>
-                   <div class="divider"></div>
-                         <p>
-                          The quiz format consists of two rounds: prelims and finals. The range of topics for the quiz isn't limited; it will be a mixture of science, technology, history, geography, entertainment, and much more. The team with the maximum points at the end of the quiz will be declared as the winners.
+                    Example:
+                    <p>
+                        Each character represents an electrical element. The behavior of the person corresponds to the element's characteristics.Using these as clues identify what each character is in electrical analogy.<br>
+                        Character A: Doesn't think of the past. He thinks only of the future.<br>
+                        Character B: Adopts and responds immediately to all situations.<br>
+                        Character C: Doesn't like changes in life.<br>
+                        Relate these clues to the elements' behavior and identify these characters. Then, connect these elements so that there is no current division between them on the given bread board. Now, identify across which element the LED will glow.<br>
+                        This example is for a basic idea.
 
-                          <p><b>RULES</b></p>
-
-                          Prelims: <br>
-                          a. Teams of 2; no more, no less. <br>
-                          b. Number of questions will range between 25 and 30. There will be a certain number of starred questions which is used to settle a tied score. <br>
-                          c. This round is a written round, where the score is decided on the number of correct answers.<br>
-                          d. Top eight teams qualify for the finals.<br>
-                          <p>
-                          Finals:<br> 
-                          a. Eight teams are seated according to their prelims score.<br>
-                          b. The format is not final but will contain a number of themed rounds and a normal rounds.<br>
-                          c. Questions will be put up through the projector on the screen.<br>
-
-                          Quiz master's decision on the validity of an answer is final.
-                          <p><b>CONTACT</b><br>
-                          Adithyan Suresh : 9500086370<br>
-                          Vaneesha : 9952214684<br>
-                </div>
-                <div class="divider"></div>
-                <div class="modal-footer">
-                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
-                </div>
-  </div>
-  <div id="modal9" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                   <span class="card-title"style="text-align:center;">T E C H N I C A L&nbsp; T R E A S U R E &nbsp; H U N T</span>
-                   <div class="divider"></div>
-                         <p><b>INSTRUCTIONS TO THE PARTICIPANT</b></p>
-                         -> Each participant should come bring their college ID card.
-                          <br>-> Participants are asked to be in the venue at 9.00 A.M. on 20th January 2018.
-                          <br>-> Spot Registration time is from 8.00a.m to 9.00 a.m. on 20th January 2018.
-                          <br>-> For all events, Judge’s decision will be the final.
-                          <br>-> Organizers are not responsible for any delay, loss or damage in postal or electronic correspondence.
                         <p><b>RULES</b></p>
-                        1. Maximum of three members per team.<br>
-                        2. Each team has to announce a leader at the time of registration.
-                        <br>3. The Treasure Hunt consists of X clues, each one leading to the next clue. Each correctly solved clue carries 10 points. And final Treasure carries X*10 points.
-                        <br>4. Each team will be allotted a particular colour. And all the clues for the team will be represented by that colour.
-                        <br>5. There will be a TTH Member at each checkpoint. They will give the next code for the teams based on their clue colour.
-                        <br>6. There is a time limit of 3 hrs. for all the competing teams to find the treasure. Find your team's coloured clue which will lead you to next clue.
-                        <br>7. The clues are to be found in a particular order. A team cannot skip a clue. Skipping a clue leads to disqualification of the team.
-                        <br>8. If you move anything to search an area, put it back the way it was before you leave.
-                         <br>9. If you found other team's clue by any chance never tamper it. A violation of this rule could cause disqualification of your team.
-                        <br>10. Do not search for clues in off-limit areas.
-                        <br>11. All the clues of the teams are different and located at different places but the final destination i.e. the treasure is same. The team which finds the treasure wins first.
-                        <br>12. An entire team must stay together. It cannot split up to find different clues. If a team splits, it will be penalized by a point penalty and after 3 penalty points, team will be disqualified.
-                        <br>13. No external help like calculator, Mobile, electronic gadgets should be used.
-                        Violating any of the rules will lead to the elimination of the concerned team.
-                        <br><i>Number of clues depends on the number of teams registered</i>
-                        <p>
-                        <b>CONTACTS</b><p>
-                        Vaneesha:  9952214684<br>
-                        Lalitha Rani: 9490848336
-                </div>
-                <div class="divider"></div>
-                <div class="modal-footer">
-                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
-                </div>
-  </div>
- <div class="footer_custom" style="font-family:Lato-Italic;"><span style="color:red;">&lt;/&gt;</span> with <span style="color:red;">&hearts;</span> by <a href="contacts.html">Team Sensors'18</div>
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script type="text/javascript">
-     
-      $(document).ready(function(){
+                        1) Mobiles and internet usage is strictly prohibited.<br>
+                        2) No need to bring components. You will be provided with the components.<br>
+                        3) Event managers decision is final. No further arguments are entertained.<p>
 
-     $(".button-collapse").sideNav({
-         closeOnClick: false,
-         draggable: true,
-         menuWidth: 300
-      });
-      $('.collapsible').collapsible();
-       $('.modal').modal();
-    
-  });
-     </script>
-    </body>
-  </html>
-        
+
+
+                        <b> JUDGING CRITERIA</b></p>
+                        1. Time taken to obtain the output.
+                        <br> 2. The way team interprets the components from the story description given.
+
+                        <p><b>CONTACTS</b><br>
+                            Nikhil : +919461461061<br>
+                            Rohith : +919790036653
+                        </div>
+                        <div class="divider"></div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
+                        </div>
+                    </div>
+                    <div id="modal2" class="modal modal-fixed-footer">
+                        <div class="modal-content">
+                           <span class="card-title"style="text-align:center;">C O D E &nbsp; Q U E S T</span>
+                           <div class="divider"></div>
+                           <p>
+                             <b>FORMAT</b></p>
+                             Round 1:<br>
+                             It will be a pen and paper test consisting of basic C and algorithms based questions. 
+                             <br>The best 15 top scoring teams will be selected. 
+                             <p>
+                              Round 2:
+                              <br>In this round, you should write the code for given questions and execute 
+                              your code on the computers provided . <br>
+                              You can code in the programming language of your choice
+
+                              <p><b>JUDGING CRITERIA</b></p>
+                              1. In Final Round, top 3 teams will be selected as winners based on their scores and the efficiency and optimization of the code cracked.  
+                              <br>
+                              2. The decision of the organizers in declaring the results will be final. No queries in this regard will be entertained.  
+                              <br> 
+                              3. In case of any ties, more efficient solutions will be given preference.  
+                              <br> 
+                              4. Any participant found to be indulging in any form of malpractice will be immediately disqualified.
+                              <p><b>RULES</b></p>
+                              -> Each team can have maximum of two members. One person is also allowed.  
+                              <br>
+                              -> Knowledge of C, C++ and Data Structure is required  
+                              <br> 
+                              -> DiscussIon of strategy Or giving suggestions or tips during the event will not be encouraged.
+                              <br> 
+                              -> The timing must be strictly adhered to.  
+                              <p><b>FAQs</b></p>
+                              Q1. Do I have to bring my laptop?  <br>
+                              A1. No need of laptop. You will be provided with systems to work on.
+                              <p>
+                                  Q2. What kind of questions will be asked in first round?       <br> 
+                                  A2. Basic debugging and output type questions.  
+                                  <p>
+                                      Q3. I don’t have a partner, can I participate?  <br>
+                                      A3. Yes you can, a team can have a maximum of 2 persons and a minimum of 1 person. 
+                                      <p>
+                                        <b>CONTACTS</b><br>
+                                        Nikhil : +919461461061<br>
+                                        Rohith : +919790036653 
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="modal-footer">
+                                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
+                                  </div>
+                              </div>
+                              <div id="modal3" class="modal modal-fixed-footer">
+                                <div class="modal-content">
+                                   <span class="card-title"style="text-align:center;">A L G O &nbsp; W A R R I O R S</span>
+                                   <div class="divider"></div>
+                                   <p>
+                                     Algo Warriors is an event which will test the aptitude of the participant, participant’s attention to details and their speed of coming up with efficient solutions using computer science algorithms. <p>
+                                     <p><b>RULES</b></p>
+                                     1. All participating individuals will compete.<br>
+                                     2. Carry a pen and college identity card.<br>
+                                     3. The decision of judges and event managers is final.<br>
+                                     4. Allowed Programming Languages: C, C++, Java, Python<br>
+                                     5. Mobile and internet usage is strictly prohibited.  
+                                     <p><b>JUDGING CRITERIA</b></p>
+                                     1. Finding How Much Efficient Given Modified Algorithm from Standard Algorithm
+                                     <br>2. Finding Time Complexity of Modified Algorithm
+                                     <br>3. Finding Space Complexity of Modified Algorithm
+                                     <p><b> EXAMPLE </b></p>
+                                     Given a sorted array arr[] of n elements, write a function to search a given element x in arr[].
+                                     <p>A simple approach is to do Linear Search. The time complexity of above algorithm is O(n). Another approach to perform the same task is using Binary Search.<p>
+                                        Binary Search: Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found, or the interval is empty.<p>
+                                        The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O (logn).<p>
+                                        The example given here is a very basic model. But the problem that will be given will be more complex than this. 
+                                        <p><b>FAQs</b></p>
+                                        Q: Do I need to have any prerequisite knowledge?
+                                        <br>A: Basic skills to resolve technical problems is sufficient.
+                                        <p>Q: How to register for the event?
+                                            <br>A: Online registration through the link in fb page (sensors).
+                                            <p>Q: Is there any payment for participation in the event?
+                                                <br>A: No, it is absolutely free. Participate, ace the round and go back with lots of goodies!
+                                                <p><b>CONTACTS</b><br>
+                                                    Nikhil : +919461461061<br>
+                                                    Rohith : +919790036653 
+                                                </div>
+                                                <div class="divider"></div>
+                                                <div class="modal-footer">
+                                                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
+                                              </div>
+                                          </div>
+                                          <div id="modal4" class="modal modal-fixed-footer">
+                                            <div class="modal-content">
+                                               <span class="card-title"style="text-align:center;">I D E A T E &nbsp; &AMP; &nbsp; B U I L D</span>
+                                               <div class="divider"></div>
+                                               <p>
+                                                 <b>FORMAT</b><p>
+                                                 Round 1:<br>
+
+                                                 -> Online prelims from September 20 to October 4.
+                                                 <br>-> Participant must submit an abstract with a brief description of their idea
+                                                 along with the details of the team members, college and email id.
+                                                 <br>-> The abstract can be on any viable topic under Circuital (IOT,Signal
+                                                 Processing , Embedded Systems etc.), Robotics, Automation, Artificial
+                                                 intelligence with objective, impact, innovativeness and available
+                                                 technology.
+                                                 <br>-> Entries must be sent to <b>sensors2018@gmail.com</b>
+                                                 <p>
+                                                    Round 2:
+
+                                                    <br>-> Shortlisted participants are expected to work on their idea and execute
+                                                    it.
+                                                    <br>-> Submitting a working prototype is encouraged, but participants can also
+                                                    submit a design or simulation of the same.
+                                                    <br>-> Participant must be able to give a presentation if asked.
+                                                    <br>-> Judge’s decision is final
+                                                    <br>-> The round 2 takes place during the SENSORS event on October 7.
+
+                                                    <p><b>JUDGING CRITERIA</b>
+                                                        <br>-> Creativity/Innovation in the idea.
+                                                        <br>->  Originality
+                                                        <br>->  Extent of development of the Idea.
+                                                        <br>->  Potential for Impact.
+                                                        <br>->  Scalability.
+                                                        <br>->  Economic feasibility.
+                                                        <br>->  Quality of presentation.
+
+                                                        <p><b>RULES</b>
+                                                            <br>->  Maximum of 5 members per team.
+                                                            <br>->  The abstract must contain less than 250 words.
+                                                            <br>->  The abstract must briefly explain the different aspects mentioned above.
+                                                            <br>->  Any form of plagiarism is not encouraged and will lead to elimination.
+                                                            <br>->  If the technology is already present, give a description of the additional
+                                                            functionalities introduced along with the available technology.
+                                                            <br>->  All the entries must be submitted before the stipulated deadline.
+
+                                                            <p><b>PRIZES</b>
+                                                                <br>Will be announced soon
+
+                                                                <b><p>CONTACTS</b><br>
+                                                                Email us at: sensors2018@gmail.com
+                                                                <br>Nikhil : +919461461061<br>
+                                                                Rohith : +919790036653 
+                                                            </div>
+                                                            <div class="divider"></div>
+                                                            <div class="modal-footer">
+                                                              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
+                                                          </div>
+                                                      </div>
+                                                      <div id="modal5" class="modal modal-fixed-footer">
+                                                        <div class="modal-content">
+                                                           <span class="card-title"style="text-align:center;">L t &nbsp; D O E S N ' T &nbsp; E X I S T</span>
+                                                           <div class="divider"></div>
+                                                           <p>
+                                                            <b>FORMAT</b></p>
+                                                            This is a team event and there will be two rounds.
+                                                            <p>ROUND 1:
+                                                                <br>-> Every team should have a maximum of 3 members and minimum of 2.
+                                                                <br>-> The first round is basically a math quiz.
+                                                                <br>-> Fixed number of questions will be given and participants are encouraged to answer the maximum.
+                                                                <br>-> Based on the scores 6-8 teams will be shortlisted to the second round.
+                                                                <p>ROUND 2:
+                                                                    <br>-> This round is more like dumb charades.
+                                                                    <br>-> Objects that can be mathematically described are given to one of the team members, he/she should use mathematical terms (the person is allowed to talk) and describe the object given to his team mates. And the team mates should guess the object correctly.
+                                                                    <br>-> For every team a total time of 90sec will be given . The one who explains is allowed to pick up any no. Of chart papers with object names.( Only after explanation of the taken one ).
+                                                                    <p> EXAMPLE:
+                                                                        <br> For example if mobile is given, the participant will use length and breadth for describing a rectangle. And then he can expand the dimension and end up with cuboid. So this is how one should describe the object and end up with the answer.
+
+                                                                        <p><b>RULES</b>
+                                                                            <br>-> Mobiles and internet usage is strictly prohibited.
+                                                                            <br>-> Event managers decision is final. No further arguments are entertained.
+                                                                            <br>-> Space for rough work will be provided along with question paper. There is no necessity to bring rough papers.
+                                                                            <p><b>JUDGING CRITERIA</b>
+                                                                                <br>-> 6-8 teams with top score will play in second round.
+                                                                                <br>-> The team which identifies the maximum number of objects will be declared as the winning team.
+                                                                                <br>-> If the objects identified by two or more teams are same then the team which took minimum time will be awarded the first place. 
+                                                                                <br>-> Event managers decision is final.
+
+                                                                                <p><b>FAQs</b>
+                                                                                    <p>1. How many members can be in a team?
+                                                                                        <br>Maximum of 3 members and a minimum of 2 is must.
+
+                                                                                        <p>2. What type of questions are asked in the first round?
+                                                                                            <br>Basic mathematics from all areas like algebra, trigonometry, probability, geometry, calculus will be asked.
+
+                                                                                            <p>3. Is participant allowed to talk in the second round while acting?
+                                                                                                <br>Yes. But he/she can only describe the objects using mathematical terms. If one uses non-mathematical words, that object will not be counted.
+
+                                                                                                <p><b>CONTACTS</b><br>
+
+                                                                                                    Nikhil : +919461461061<br>
+                                                                                                    Rohith : +919790036653 
+
+                                                                                                </div>
+                                                                                                <div class="divider"></div>
+                                                                                                <div class="modal-footer">
+                                                                                                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
+                                                                                              </div>
+                                                                                          </div>
+                                                                                          <div id="modal6" class="modal modal-fixed-footer">
+                                                                                            <div class="modal-content">
+                                                                                               <span class="card-title"style="text-align:center;">T E C H &nbsp; C L I C K</span>
+                                                                                               <div class="divider"></div>
+                                                                                               <p><b>RULES</b><p>
+                                                                                                1. The participants are required to capture any of the day to day processes and provide a description for the captured image in terms of the technical phenomenon they are aware of.
+                                                                                                <p> 2. The participants can use one or more photographs of the same subject shot in different angles to illustrate the phenomena better.<p>
+                                                                                                    3. You are free to use any camera(Professional/mobile) to click pictures.<p>
+                                                                                                    4. All the pictures must have accurate captions and technical description ,written in English only.<p>
+                                                                                                    5. Using Photoshop to bring in any superficial effects is strictly not allowed.<p>
+                                                                                                    6. Entries should send the following info along with the picture:
+                                                                                                    <ul>
+                                                                                                      <li>-> Name</li>
+                                                                                                      <li>-> College Name and Location</li>
+                                                                                                      <li>-> Contact Number</li>
+                                                                                                      <li>-> Email</li>
+                                                                                                      <li>-> Detailed description of the subject matter</li>
+                                                                                                  </ul>
+                                                                                                  7. The last date for submitting the entries is 1st October 2018<p>
+                                                                                                  8. Submissions will not be accepted once the deadline lapses.<p>
+                                                                                                  <b>
+                                                                                                    Submit your entries to:
+                                                                                                    sensors2018@gmail.com
+                                                                                                </b>
+                                                                                                <p>
+                                                                                                    <b>CONTACTS</b><p>
+                                                                                                    Nikhil : +919461461061<br>
+                                                                                                    Rohith : +919790036653 
+                                                                                                    <p>
+                                                                                                        <b>JUDGING CRITERIA</b>
+                                                                                                        <ul>
+                                                                                                          <li>-> Originality of the photo</li>
+                                                                                                          <li>-> Concept and Technicality</li>
+                                                                                                          <li>-> Caption and Description</li>
+                                                                                                      </ul>  
+                                                                                                  </div>
+                                                                                                  <div class="divider"></div>
+                                                                                                  <div class="modal-footer">
+                                                                                                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
+                                                                                                  </div>
+                                                                                              </div>
+                                                                                              <div id="modal7" class="modal modal-fixed-footer">
+                                                                                                <div class="modal-content">
+                                                                                                   <span class="card-title"style="text-align:center;">R O B O &nbsp; R A C E</span>
+                                                                                                   <div class="divider"></div>
+                                                                                                   <p>
+                                                                                                      <b>DESCRIPTION:</b><p>
+                                                                                                      You think it is as easy as it sounds? Think again. This is the grand prix of all Robot races. Make sure your bot has the same grit and brawn as you to handle the heat of our tracks here. 
+                                                                                                      Build a manually controlled robot which is capable of racing on a rough circuit along with its fellow bots.<br>
+                                                                                                      In the shortest period of time, it must be able to complete the track specified.
+                                                                                                      <p><b>EVENT RULES:</b></p>
+                                                                                                      The game play consists of a single round.<br>
+                                                                                                      The participating teams will drive their robot individually in the track.<br>
+                                                                                                      The track may contain stable obstacles of small,medium and large sizes. The bot hitting the large obstacle will be given a penalty of +3 sec, hitting the medium size obstacle will get a penalty of +4 sec and the bot hitting the smaller obstacles will be given a penalty of +5 sec.
+                                                                                                      Each time the bot touches either one of the boundary, there will be a penalty of +2 seconds.
+                                                                                                      The time taken to complete the circuit will be taken as your qualifying time.<br>
+                                                                                                      The 3 teams that finish the race quickly will be declared as winners.<br>
+                                                                                                      In case of any tie ,another race will be conducted and the winner will be declared.
+                                                                                                      <p><b>GENERAL RULES:</b></p>
+                                                                                                      Team can have a maximum number of 4 members.<br>
+                                                                                                      No person shall be a member of 2 teams.<br>
+                                                                                                      A team is allowed to play with only one robot.<br>
+                                                                                                      In case the robot moves out off the arena, the robot will be placed at the previous checkpoint.<br>
+                                                                                                      Touching the robot during the game will lead to negative points.<br>
+                                                                                                      Unfair game may lead to disqualification of the team.<br>
+                                                                                                      The robot should not damage the field. Damaging/harming the arena may lead to disqualification.
+                                                                                                      Decision of the Event Organizers shall be treated as final.<br>
+                                                                                                      <p><b>BOT SPECIFICATIONS:</b></p>
+                                                                                                      The ROBOT can have a maximum dimension of 300 x 300 x 200(l x b x h) (all in mm).<br> 
+                                                                                                      The maximum potential difference between any two points should be 12 volts DC.<br>
+                                                                                                      Robot must have power supply on board. There will be no provision of external power supply.
+                                                                                                      The bot should be controlled by a joy stick.<br>
+                                                                                                      It should be controlled by a single person at a time.<br>
+                                                                                                      <p><b>FIELD SPECIFICATIONS:</b></p>
+                                                                                                      <img src="images/events_icons/roborace.png">
+                                                                                                      <p><b>JUDGING CRITERIA:</b></p>
+                                                                                                      Judging is based on Time taken to complete the track.
+                                                                                                      <p>
+                                                                                                          <b>CONTACT DETAILS:</b></p>
+                                                                                                          Nikhil : +919461461061<br>
+                                                                                                          Rohith : +919790036653 
+                                                                                                      </div>
+                                                                                                      <div class="divider"></div>
+                                                                                                      <div class="modal-footer">
+                                                                                                          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
+                                                                                                      </div>
+                                                                                                  </div>
+                                                                                                  <div id="modal8" class="modal modal-fixed-footer">
+                                                                                                    <div class="modal-content">
+                                                                                                       <span class="card-title"style="text-align:center;">S E N S O R S &nbsp; Q U I Z</span>
+                                                                                                       <div class="divider"></div>
+                                                                                                       <p>
+                                                                                                          The quiz format consists of two rounds: prelims and finals. The range of topics for the quiz isn't limited; it will be a mixture of science, technology, history, geography, entertainment, and much more. The team with the maximum points at the end of the quiz will be declared as the winners.
+
+                                                                                                          <p><b>RULES</b></p>
+
+                                                                                                          Prelims: <br>
+                                                                                                          a. Teams of 2; no more, no less. <br>
+                                                                                                          b. Number of questions will range between 25 and 30. There will be a certain number of starred questions which is used to settle a tied score. <br>
+                                                                                                          c. This round is a written round, where the score is decided on the number of correct answers.<br>
+                                                                                                          d. Top eight teams qualify for the finals.<br>
+                                                                                                          <p>
+                                                                                                              Finals:<br> 
+                                                                                                              a. Eight teams are seated according to their prelims score.<br>
+                                                                                                              b. The format is not final but will contain a number of themed rounds and a normal rounds.<br>
+                                                                                                              c. Questions will be put up through the projector on the screen.<br>
+
+                                                                                                              Quiz master's decision on the validity of an answer is final.
+                                                                                                              <p><b>CONTACT</b><br>
+                                                                                                                  Nikhil : +919461461061<br>
+                                                                                                                  Rohith : +919790036653 
+                                                                                                              </div>
+                                                                                                              <div class="divider"></div>
+                                                                                                              <div class="modal-footer">
+                                                                                                                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X CLOSE</a>
+                                                                                                              </div>
+                                                                                                          </div>
+
+                                                                                                          <div class="footer_custom" id="footer"><center>&lt;/&gt; with </span><span style="color:red;">&hearts;</span> by <a href="contacts.html">Team Sensors'18</center></div>
+                                                                                                          <!--Import jQuery before materialize.js-->
+                                                                                                          <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+                                                                                                          <script type="text/javascript" src="js/materialize.min.js"></script>
+                                                                                                          <script>
+                                                                                                            function openNav() {
+                                                                                                                document.getElementById("mySidenav").style.width = "250px";
+                                                                                                            }
+
+                                                                                                            function closeNav() {
+                                                                                                                document.getElementById("mySidenav").style.width = "0";
+                                                                                                            }
+                                                                                                            $(document).ready(function(){
+                                                                                                             $(".button-collapse").sideNav({
+                                                                                                                 closeOnClick: false,
+                                                                                                                 draggable: true,
+                                                                                                                 menuWidth: 300
+                                                                                                             });
+                                                                                                             $('.collapsible').collapsible();
+                                                                                                             $('.modal').modal();
+
+                                                                                                         });
+                                                                                                     </script>
+                                                                                                 </body>
+                                                                                                 </html>
